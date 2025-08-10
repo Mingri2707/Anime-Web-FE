@@ -1,0 +1,11 @@
+.logo-overlay {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 80px;
+  height: 20px;
+  background: black;
+  opacity: 0.8;
+  pointer-events: none; /* không chặn tương tác */
+  z-index: 10;
+}

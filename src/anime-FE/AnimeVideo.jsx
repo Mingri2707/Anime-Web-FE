@@ -49,8 +49,8 @@ const AnimeVideo = ({ title }) => {
     );
   };
 
-  const handleClick = (id) => {
-    navigate(`/banner-anime/${id}`); // chuyển sang trang Banner_anime
+  const handleClick = (animeId) => {
+    navigate(`/banner-anime/${animeId}`);
   };
 
   return (
@@ -65,17 +65,17 @@ const AnimeVideo = ({ title }) => {
           >
             {videos.map((video) => (
               <div
-                key={video.id}
-                onClick={() => handleClick(video.id)}
-                className="w-[250px] h-[170px] mr-5 shrink-0 cursor-pointer relative overflow-hidden rounded"
+                key={video.anime_id} // Sửa: dùng anime_id từ PHP
+                onClick={() => handleClick(video.anime_id)}
+                className="w-[170px] h-[250px] mr-5 shrink-0 cursor-pointer relative overflow-hidden rounded"
               >
                 <img
                   src={video.image_url}
-                  alt={video.title}
+                  alt={video.name}
                   className="w-full h-full object-cover rounded"
                 />
-                <div className="absolute bottom-0 left-0 w-full bg-black/70 text-white text-sm p-2 truncate">
-                  {video.title}
+                <div className="absolute bottom-0 left-0 w-full text-white text-sm p-2 truncate">
+                  {video.name}
                 </div>
               </div>
             ))}
